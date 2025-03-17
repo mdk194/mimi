@@ -1,0 +1,5 @@
+config SHIELD_MIMI_LEFT
+    def_bool $(shields_list_contains,mimi_left)
+
+config SHIELD_MIMI_RIGHT
+    def_bool $(shields_list_contains,mimi_right)

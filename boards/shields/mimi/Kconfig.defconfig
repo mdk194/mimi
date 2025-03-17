@@ -1,0 +1,16 @@
+if SHIELD_MIMI_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "mimi"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_MIMI_LEFT || SHIELD_MIMI_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif

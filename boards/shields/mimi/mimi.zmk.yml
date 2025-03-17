@@ -1,0 +1,12 @@
+file_format: "1"
+id: mimi
+name: mimi
+type: shield
+url: https://github.com/mdk194/mimi
+requires: [pro_micro]
+exposes: []
+features:
+  - keys
+siblings:
+  - mimi_left
+  - mimi_right

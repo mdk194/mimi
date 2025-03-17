@@ -1,0 +1,4 @@
+name: zmk-keyboards-mimi
+build:
+  settings:
+    board_root: .

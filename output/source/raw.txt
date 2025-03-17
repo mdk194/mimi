@@ -1,0 +1,546 @@
+meta:
+  engine: 4.1.0
+  name: mimi
+  version: 0.1
+  author: mdk
+units:
+  kx: cx
+  ky: cy
+  # padding
+  px: kx + 4
+  py: ky + 4
+  dpx: kx + 8
+  dpy: ky + 8
+
+  # Physical measures
+  screw_radius: 1.1 # M2 screws
+  screw_diameter: screw_radius * 2
+  screw_head_radius: 2.05
+  screw_head_diameter: screw_head_radius * 2
+  spacer_radius: 2.15 # M2 standoffs
+  spacer_diameter: spacer_radius * 2
+  fillet_radius: 0.5
+  pwr_trace_width: 0.25
+  gnd_trace_width: 0.25
+  signal_trace_width: 0.15
+
+points:
+  key:
+    footprints:
+      choc_hotswap:
+        type: choc
+        params:
+          hotswap: true
+          reverse: true
+          keycaps: true
+        nets:
+          from: =colrow
+          to: =column_net
+      diode:
+        type: diode
+        nets:
+          from: =colrow
+          to: =row_net
+        anchor:
+          shift: [0, -5]
+  zones:
+    matrix:
+      anchor:
+        rotate: 0
+        shift: [50, -150] # for Kicad
+      key:
+        padding: 1ky
+        spread: 1kx
+      columns:
+        outer:
+          key:
+            stagger: 0 ky
+            column_net: P21
+        pinky:
+          key:
+            stagger: 0 ky
+            column_net: P20
+        ring:
+          key:
+            stagger: 0.55 ky
+            column_net: P19
+        middle:
+          key:
+            stagger: 0.2 ky
+            column_net: P18
+        index:
+          key:
+            stagger: -0.2 ky
+            column_net: P15
+        inner:
+          key:
+            stagger: -0.1 ky
+            column_net: P14
+      rows:
+        bottom:
+          row_net: P8
+        home:
+          row_net: P7
+        top:
+          row_net: P6
+        number:
+          row_net: P5
+    thumbfan:
+      key:
+        padding: 1ky
+        spread: 1kx
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-1 kx, -1 ky]
+      columns:
+        near:
+          key:
+            splay: -15
+            origin: [-0.5 kx, -0.5 ky]
+            column_net: P18
+        home:
+          key:
+            splay: -15
+            origin: [-0.5 kx, -0.5 ky]
+            column_net: P15
+        far:
+          key:
+            splay: -15
+            origin: [-0.5 kx, -0.5 ky]
+            column_net: P14
+      rows:
+        thumb:
+          row_net: P9
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      asym: source
+      size: [px, py]
+  switches:
+    - what: rectangle
+      where: true
+      asym: source
+      size: 14
+  controller_area:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_top
+          shift: [0.5px, 0.5py]
+        - ref: matrix_inner_top
+          shift: [0.5px + 22, 0.5py]
+        - ref: thumbfan_far_thumb
+          shift: [0.5px - 1, 0.5py]
+        - ref: matrix_inner_bottom
+          shift: [0.5px, -0.5py]
+  xlcontroller_area:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_top
+          shift: [0.5dpx, 0.5dpy]
+        - ref: matrix_inner_top
+          shift: [0.5dpx + 22, 0.5dpy]
+        - ref: thumbfan_far_thumb
+          shift: [0.5dpx - 2, 0.5dpy]
+        - ref: matrix_inner_bottom
+          shift: [0.5dpx, -0.5dpy]
+  top_cover_area:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_top
+          shift: [0.5px, 0.5py + 2]
+        - ref: matrix_inner_top
+          shift: [0.5dpx + 22, 0.5dpy]
+        - ref: thumbfan_far_thumb
+          shift: [0.5px, 0.5py + 2]
+        - ref: matrix_inner_bottom
+          shift: [0.5px, -0.5py]
+  inner_top_cover_area:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_top
+          shift: [0.5px + 2, 0.5py]
+        - ref: matrix_inner_top
+          shift: [0.5px + 22, 0.5py]
+        - ref: thumbfan_far_thumb
+          shift: [0.5px - 5, 0.5py + 4]
+        - ref: matrix_inner_bottom
+          shift: [0.5px + 2, -0.5py + 2]
+  base:
+    - what: polygon
+      operation: stack
+      fillet: 1
+      points:
+        - ref: matrix_outer_number
+          shift: [-0.5px, 0.5py]
+        - ref: matrix_pinky_number
+          shift: [0.5kx - 2, 0.5ky + 2]
+        - ref: matrix_ring_number
+          shift: [-0.5kx - 2, 0.5ky + 2]
+        - ref: matrix_ring_number
+          shift: [0.5kx - 2, 0.5ky + 2]
+        - ref: matrix_middle_number
+          shift: [-0.5kx - 2, 0.5ky + 2]
+        - ref: matrix_middle_number
+          shift: [0.5kx + 2, 0.5ky + 2]
+        - ref: matrix_index_number
+          shift: [-0.5kx + 2, 0.5ky + 2]
+        - ref: matrix_index_number
+          shift: [0.5kx + 2, 0.5ky + 2]
+        - ref: matrix_inner_number
+          shift: [-0.5kx + 2, 0.5ky + 2]
+        - ref: matrix_inner_number
+          shift: [0.5px , 0.5py]
+        - ref: matrix_inner_bottom
+          shift: [0.5px, -0.5py]
+        - ref: thumbfan_far_thumb
+          shift: [0.5px, 0.5py]
+        - ref: thumbfan_far_thumb
+          shift: [0.5px, -0.5py]
+        - ref: thumbfan_near_thumb
+          shift: [-0.5px, -0.5py]
+        - ref: matrix_pinky_bottom
+          shift: [0.5px, -0.5py]
+        - ref: matrix_outer_bottom
+          shift: [-0.5px, -0.5py]
+  xlbase:
+    - what: polygon
+      operation: stack
+      fillet: 1
+      points:
+        - ref: matrix_outer_number
+          shift: [-0.5dpx, 0.5dpy]
+        - ref: matrix_pinky_number
+          shift: [0.5kx - 4, 0.5ky + 4]
+        - ref: matrix_ring_number
+          shift: [-0.5kx - 4, 0.5ky + 4]
+        - ref: matrix_ring_number
+          shift: [0.5kx - 4, 0.5ky + 4]
+        - ref: matrix_middle_number
+          shift: [-0.5kx - 4, 0.5ky + 4]
+        - ref: matrix_middle_number
+          shift: [0.5kx + 4, 0.5ky + 4]
+        - ref: matrix_index_number
+          shift: [-0.5kx + 4, 0.5ky + 4]
+        - ref: matrix_index_number
+          shift: [0.5kx + 4, 0.5ky + 4]
+        - ref: matrix_inner_number
+          shift: [-0.5kx + 4, 0.5ky + 4]
+        - ref: matrix_inner_number
+          shift: [0.5dpx , 0.5dpy]
+        - ref: matrix_inner_bottom
+          shift: [0.5dpx, -0.5dpy]
+        - ref: thumbfan_far_thumb
+          shift: [0.5dpx, 0.5dpy]
+        - ref: thumbfan_far_thumb
+          shift: [0.5dpx, -0.5dpy]
+        - ref: thumbfan_near_thumb
+          shift: [-0.5dpx, -0.5dpy]
+        - ref: matrix_pinky_bottom
+          shift: [0.5dpx, -0.5dpy]
+        - ref: matrix_outer_bottom
+          shift: [-0.5dpx, -0.5dpy]
+  screw_holes:
+    top_left:
+      what: circle
+      radius: screw_radius
+      where:
+        - ref: matrix_pinky_number
+          shift: [-0.5 kx, -0.5 ky]
+    bottom_left:
+      what: circle
+      radius: screw_radius
+      where:
+        - ref: matrix_outer_bottom
+          shift: [0.5 kx, 0.5 ky]
+    top_right:
+      what: circle
+      radius: screw_radius
+      where:
+        - ref: matrix_inner_number
+          shift: [-0.5 kx, -0.4 ky]
+    palm:
+      what: circle
+      radius: screw_radius
+      where:
+        - ref: matrix_index_bottom
+          shift: [0.5 kx, -0.6 ky]
+    thumb:
+      what: circle
+      radius: screw_radius
+      where:
+        - ref: thumbfan_far_thumb
+          shift: [-0.55 kx, -0.1 ky]
+  standoff:
+    top_left:
+      what: circle
+      radius: spacer_radius
+      where:
+        - ref: matrix_pinky_number
+          shift: [-0.5 kx, -0.5 ky]
+    bottom_left:
+      what: circle
+      radius: spacer_radius
+      where:
+        - ref: matrix_outer_bottom
+          shift: [0.5 kx, 0.5 ky]
+    top_right:
+      what: circle
+      radius: spacer_radius
+      where:
+        - ref: matrix_inner_number
+          shift: [-0.5 kx, -0.4 ky]
+    palm:
+      what: circle
+      radius: spacer_radius
+      where:
+        - ref: matrix_index_bottom
+          shift: [0.5 kx, -0.6 ky]
+    thumb:
+      what: circle
+      radius: spacer_radius
+      where:
+        - ref: thumbfan_far_thumb
+          shift: [-0.55 kx, -0.1 ky]
+  top_plate:
+    - "base"
+    - "-switches"
+    - "-screw_holes"
+  pcb:
+    - "base"
+    - "-screw_holes"
+    - "+controller_area"
+  xlpcb:
+    - "xlbase"
+    - "-screw_holes"
+    - "+xlcontroller_area"
+  bottom_case:
+    - "base"
+    - "+controller_area"
+  xlbottom_case:
+    - "xlbase"
+    - "+xlcontroller_area"
+  top_case:
+    - "xlbase"
+    - "-switches"
+    - "-screw_holes"
+    - "+xlcontroller_area"
+  trrs:
+    - what: rectangle
+      adjust:
+        ref: matrix_inner_bottom
+        shift: [28, -10]
+      size: [14.2, 6.2]
+  power:
+    - what: rectangle
+      adjust:
+        ref: matrix_inner_bottom
+        shift: [29, 2]
+      size: [12, 5] # todo fix x size
+  usb:
+    - what: rectangle
+      adjust:
+        ref: matrix_inner_top
+        shift: [23, 10]
+      size: [8, 6] # todo fix y size
+
+pcbs:
+  top_plate:
+    template: kicad8
+    outlines:
+      edge:
+        outline: top_plate
+        layer: Edge.Cuts
+  bottom_plate:
+    template: kicad8
+    outlines:
+      edge:
+        outline: pcb
+        layer: Edge.Cuts
+  xlbottom_case:
+    template: kicad8
+    outlines:
+      edge:
+        outline: xlbottom_case
+        layer: Edge.Cuts
+  top_case:
+    template: kicad8
+    outlines:
+      edge:
+        outline: xlbottom_case
+        layer: Edge.Cuts
+  board:
+    template: kicad8
+    outlines:
+      edge:
+        outline: pcb
+        layer: Edge.Cuts
+    footprints:
+      jlc_order_number:
+        what: text
+        where:
+          ref:
+            - matrix_middle_bottom
+          shift: [0, -0.6 ky]
+        params:
+          text: "JLCJLCJLCJLC"
+          justify: left
+      choc_hotswap:
+        what: ceoloide/switch_choc_v1_v2
+        where:
+          - /matrix_.*/
+          - /thumbfan_.*/
+        params:
+          hotswap: true
+          reversible: true
+          include_traces_vias: false
+          include_stabilizer_pad: false
+          choc_v2_support: false
+          from: "{{colrow}}"
+          to: "{{column_net}}"
+      diode:
+        what: ceoloide/diode_tht_sod123
+        where:
+          - /matrix_.*/
+          - /thumbfan_.*/
+        adjust.shift: [0, -4]
+        params:
+          reversible: true
+          include_tht: true
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+      mcu:
+        what: ceoloide/mcu_nice_nano
+        where:
+          ref:
+            - matrix_inner_top
+          shift: [23, -7]
+        params:
+          reversible: true
+          include_traces: true
+          reverse_mount: true
+          show_silk_labels: true
+          show_via_labels: true
+          use_rectangular_jumpers: true
+      jst:
+        what: ceoloide/battery_connector_jst_ph_2
+        where:
+          ref:
+            - matrix_inner_bottom
+          shift: [18, -3]
+          rotate: 180
+        params:
+          BAT_P: BAT_P
+          BAT_N: GND
+          reversible: true
+          include_courtyard: false
+      power:
+        what: ceoloide/power_switch_smd_side
+        where:
+          ref:
+            - matrix_inner_bottom
+          shift: [30, 2]
+        params:
+          from: BAT_P
+          to: RAW
+          reversible: true
+      trrs:
+        what: ceoloide/trrs_pj320a
+        where: matrix_inner_bottom
+        params:
+          R1: P2
+          TP: VCC
+          R2: GND
+          SL: P3
+          reversible: true
+        adjust:
+          shift: [33, -10]
+          rotate: 270
+      reset:
+        what: ceoloide/reset_switch_tht_top
+        where:
+          ref:
+            - matrix_inner_bottom
+          shift: [31, -20]
+          rotate: 270
+        params:
+          from: GND
+          to: RST
+          reversible: true
+      info:
+        what: ceoloide/utility_text
+        where:
+          ref:
+            - matrix_pinky_bottom
+          shift: [0.75 kx, 0]
+        params:
+          text: "mimi\\nby mdk"
+          reversible: true
+
+cases:
+  _bottom:
+    - name: bottom_case
+      extrude: 1.2
+    - name: standoff
+      extrude: 2.4
+      shift: [0, 0, 1.2]
+    - name: screw_holes
+      extrude: 2.4
+      operation: subtract
+      shift: [0, 0, 1.2]
+  xlBottom:
+    - name: xlbottom_case
+      extrude: 1.2
+  _outerWallBottom:
+    - name: xlbottom_case
+      extrude: 5.2 # include pcb 1.6
+  _innerWallBottom:
+    - name: bottom_case
+      extrude: 5.2 # include pcb 1.6
+  wall_bottom:
+    - what: case
+      name: _outerWallBottom
+      operation: add
+    - what: case
+      name: _innerWallBottom
+      operation: subtract
+  bottom:
+    - what: case
+      name: _bottom
+    - what: case
+      name: wall_bottom
+      operation: add
+  _top:
+    - name: top_case
+      extrude: 1.8
+      shift: [0, 0, 5.2]
+    - name: xlcontroller_area
+      extrude: 9.8
+      shift: [0, 0, 5.2]
+    - name: top_cover_area
+      extrude: 9.8
+      operation: add
+      shift: [0, 0, 5.2]
+    - name: inner_top_cover_area
+      extrude: 8
+      operation: subtract
+      shift: [0, 0, 5.2]
+    - name: trrs
+      extrude: 5.2 # height of trrs socket
+      operation: subtract
+      shift: [0, 0, 5.2]
+    - name: power
+      extrude: 1.6 # height of power slide
+      operation: subtract
+      shift: [0, 0, 5.2]
+    - name: usb
+      extrude: 4 # height of usb port in the controller
+      operation: subtract
+      shift: [0, 0, 5.2 + 3]
+  top:
+    - what: case
+      name: _top

@@ -1,0 +1,52 @@
+models:
+    export:
+        models:
+            a:
+                models: {}
+                origin:
+                    - 0
+                    - 0
+            b:
+                paths:
+                    p1:
+                        type: line
+                        origin:
+                            - 151
+                            - -152.85
+                        end:
+                            - 151
+                            - -97.85
+                    p2:
+                        type: line
+                        origin:
+                            - 151
+                            - -97.85
+                        end:
+                            - 173
+                            - -97.85
+                    p3:
+                        type: line
+                        origin:
+                            - 173
+                            - -97.85
+                        end:
+                            - 172.84517979999998
+                            - -181.5087428
+                    p4:
+                        type: line
+                        origin:
+                            - 172.84517979999998
+                            - -181.5087428
+                        end:
+                            - 151
+                            - -152.85
+                origin:
+                    - 0
+                    - 0
+        origin:
+            - 0
+            - 0
+units: mm
+origin:
+    - 0
+    - 0

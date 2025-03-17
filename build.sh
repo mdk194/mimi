@@ -40,11 +40,11 @@ if [ -d "out" ]; then
     rm -r "out"
 fi
 
-# ./builder/steps/generate.sh
-# ./builder/steps/add_design_rules.sh
-# ./builder/steps/add_tracks.sh
-# ./builder/steps/autoroute.sh
-./builder/steps/plot_gerbers_and_images.sh
+./builder/steps/generate.sh
+./builder/steps/add_design_rules.sh
+./builder/steps/add_tracks.sh
+./builder/steps/autoroute.sh
+#./builder/steps/plot_gerbers_and_images.sh
 
 log_info "--- All Done ---"
 

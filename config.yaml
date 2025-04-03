@@ -452,11 +452,11 @@ pcbs:
         what: ceoloide/trrs_pj320a
         where: matrix_inner_bottom
         params:
-          R1: P2
-          TP: VCC
-          R2: GND
-          SL: P3
+          SL: GND
+          R2: P0
+          TP: VCC # Tip and Ring 1 are joined together
           reversible: true
+          symmetric: true
         adjust:
           shift: [33, -10]
           rotate: 270

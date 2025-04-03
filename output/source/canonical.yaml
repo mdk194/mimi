@@ -552,7 +552,7 @@ outlines:
                     - 23
                     - 10
             size:
-                - 8
+                - 12
                 - 6
 pcbs:
     top_plate:
@@ -669,11 +669,11 @@ pcbs:
                 what: ceoloide/trrs_pj320a
                 where: matrix_inner_bottom
                 params:
-                    R1: P2
+                    SL: GND
+                    R2: P0
                     TP: VCC
-                    R2: GND
-                    SL: P3
                     reversible: true
+                    symmetric: true
                 adjust:
                     shift:
                         - 33
@@ -801,12 +801,12 @@ cases:
                 - 5.2
         -
             name: usb
-            extrude: 4
+            extrude: 5
             operation: subtract
             shift:
                 - 0
                 - 0
-                - 5.2 + 3
+                - 5.2 + 2
     top:
         -
             what: case

@@ -346,7 +346,7 @@ outlines:
       adjust:
         ref: matrix_inner_top
         shift: [23, 10]
-      size: [8, 6] # todo fix y size
+      size: [12, 6] # todo fix y size
 
 pcbs:
   top_plate:
@@ -452,11 +452,11 @@ pcbs:
         what: ceoloide/trrs_pj320a
         where: matrix_inner_bottom
         params:
-          R1: P2
-          TP: VCC
-          R2: GND
-          SL: P3
+          SL: GND
+          R2: P0
+          TP: VCC # Tip and Ring 1 are joined together
           reversible: true
+          symmetric: true
         adjust:
           shift: [33, -10]
           rotate: 270
@@ -538,9 +538,9 @@ cases:
       operation: subtract
       shift: [0, 0, 5.2]
     - name: usb
-      extrude: 4 # height of usb port in the controller
+      extrude: 5 # height of usb port in the controller
       operation: subtract
-      shift: [0, 0, 5.2 + 3]
+      shift: [0, 0, 5.2 + 2]
   top:
     - what: case
       name: _top

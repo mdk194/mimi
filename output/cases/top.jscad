@@ -98,9 +98,9 @@ function power_extrude_1_6_outline_fn(){
 }
 
 
-function usb_extrude_4_outline_fn(){
-    return new CSG.Path2D([[159,-101.35],[167,-101.35]]).appendPoint([167,-95.35]).appendPoint([159,-95.35]).appendPoint([159,-101.35]).close().innerToCAG()
-.extrude({ offset: [0, 0, 4] });
+function usb_extrude_5_outline_fn(){
+    return new CSG.Path2D([[157,-101.35],[169,-101.35]]).appendPoint([169,-95.35]).appendPoint([157,-95.35]).appendPoint([157,-101.35]).close().innerToCAG()
+.extrude({ offset: [0, 0, 5] });
 }
 
 
@@ -206,7 +206,7 @@ function usb_extrude_4_outline_fn(){
             
 
                 // creating part 6 of case _top
-                let _top__part_6 = usb_extrude_4_outline_fn();
+                let _top__part_6 = usb_extrude_5_outline_fn();
 
                 // make sure that rotations are relative
                 let _top__part_6_bounds = _top__part_6.getBounds();
@@ -216,7 +216,7 @@ function usb_extrude_4_outline_fn(){
                 _top__part_6 = rotate([0,0,0], _top__part_6);
                 _top__part_6 = translate([_top__part_6_x, _top__part_6_y, 0], _top__part_6);
 
-                _top__part_6 = translate([0,0,8.2], _top__part_6);
+                _top__part_6 = translate([0,0,7.2], _top__part_6);
                 result = result.subtract(_top__part_6);
                 
             

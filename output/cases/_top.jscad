@@ -104,6 +104,12 @@ function usb_extrude_5_outline_fn(){
 }
 
 
+function reset_extrude_1_8_outline_fn(){
+    return CAG.circle({"center":[171,-162.35],"radius":0.8})
+.extrude({ offset: [0, 0, 1.8] });
+}
+
+
 
 
                 function _top_case_fn() {
@@ -218,6 +224,22 @@ function usb_extrude_5_outline_fn(){
 
                 _top__part_6 = translate([0,0,7.2], _top__part_6);
                 result = result.subtract(_top__part_6);
+                
+            
+
+                // creating part 7 of case _top
+                let _top__part_7 = reset_extrude_1_8_outline_fn();
+
+                // make sure that rotations are relative
+                let _top__part_7_bounds = _top__part_7.getBounds();
+                let _top__part_7_x = _top__part_7_bounds[0].x + (_top__part_7_bounds[1].x - _top__part_7_bounds[0].x) / 2
+                let _top__part_7_y = _top__part_7_bounds[0].y + (_top__part_7_bounds[1].y - _top__part_7_bounds[0].y) / 2
+                _top__part_7 = translate([-_top__part_7_x, -_top__part_7_y, 0], _top__part_7);
+                _top__part_7 = rotate([0,0,0], _top__part_7);
+                _top__part_7 = translate([_top__part_7_x, _top__part_7_y, 0], _top__part_7);
+
+                _top__part_7 = translate([0,0,13.2], _top__part_7);
+                result = result.subtract(_top__part_7);
                 
             
                     return result;

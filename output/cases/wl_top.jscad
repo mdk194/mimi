@@ -86,12 +86,6 @@ function inner_top_cover_area_extrude_8_outline_fn(){
 }
 
 
-function trrs_extrude_5_2_outline_fn(){
-    return new CSG.Path2D([[160.9,-155.45],[175.1,-155.45]]).appendPoint([175.1,-149.25]).appendPoint([160.9,-149.25]).appendPoint([160.9,-155.45]).close().innerToCAG()
-.extrude({ offset: [0, 0, 5.2] });
-}
-
-
 function power_extrude_1_6_outline_fn(){
     return new CSG.Path2D([[163,-142.85],[175,-142.85]]).appendPoint([175,-137.85]).appendPoint([163,-137.85]).appendPoint([163,-142.85]).close().innerToCAG()
 .extrude({ offset: [0, 0, 1.6] });
@@ -112,134 +106,118 @@ function reset_extrude_1_8_outline_fn(){
 
 
 
-                function _top_case_fn() {
+                function _wl_top_case_fn() {
                     
 
-                // creating part 0 of case _top
-                let _top__part_0 = top_case_extrude_1_8_outline_fn();
+                // creating part 0 of case _wl_top
+                let _wl_top__part_0 = top_case_extrude_1_8_outline_fn();
 
                 // make sure that rotations are relative
-                let _top__part_0_bounds = _top__part_0.getBounds();
-                let _top__part_0_x = _top__part_0_bounds[0].x + (_top__part_0_bounds[1].x - _top__part_0_bounds[0].x) / 2
-                let _top__part_0_y = _top__part_0_bounds[0].y + (_top__part_0_bounds[1].y - _top__part_0_bounds[0].y) / 2
-                _top__part_0 = translate([-_top__part_0_x, -_top__part_0_y, 0], _top__part_0);
-                _top__part_0 = rotate([0,0,0], _top__part_0);
-                _top__part_0 = translate([_top__part_0_x, _top__part_0_y, 0], _top__part_0);
+                let _wl_top__part_0_bounds = _wl_top__part_0.getBounds();
+                let _wl_top__part_0_x = _wl_top__part_0_bounds[0].x + (_wl_top__part_0_bounds[1].x - _wl_top__part_0_bounds[0].x) / 2
+                let _wl_top__part_0_y = _wl_top__part_0_bounds[0].y + (_wl_top__part_0_bounds[1].y - _wl_top__part_0_bounds[0].y) / 2
+                _wl_top__part_0 = translate([-_wl_top__part_0_x, -_wl_top__part_0_y, 0], _wl_top__part_0);
+                _wl_top__part_0 = rotate([0,0,0], _wl_top__part_0);
+                _wl_top__part_0 = translate([_wl_top__part_0_x, _wl_top__part_0_y, 0], _wl_top__part_0);
 
-                _top__part_0 = translate([0,0,5.2], _top__part_0);
-                let result = _top__part_0;
+                _wl_top__part_0 = translate([0,0,5.2], _wl_top__part_0);
+                let result = _wl_top__part_0;
                 
             
 
-                // creating part 1 of case _top
-                let _top__part_1 = xlcontroller_area_extrude_9_8_outline_fn();
+                // creating part 1 of case _wl_top
+                let _wl_top__part_1 = xlcontroller_area_extrude_9_8_outline_fn();
 
                 // make sure that rotations are relative
-                let _top__part_1_bounds = _top__part_1.getBounds();
-                let _top__part_1_x = _top__part_1_bounds[0].x + (_top__part_1_bounds[1].x - _top__part_1_bounds[0].x) / 2
-                let _top__part_1_y = _top__part_1_bounds[0].y + (_top__part_1_bounds[1].y - _top__part_1_bounds[0].y) / 2
-                _top__part_1 = translate([-_top__part_1_x, -_top__part_1_y, 0], _top__part_1);
-                _top__part_1 = rotate([0,0,0], _top__part_1);
-                _top__part_1 = translate([_top__part_1_x, _top__part_1_y, 0], _top__part_1);
+                let _wl_top__part_1_bounds = _wl_top__part_1.getBounds();
+                let _wl_top__part_1_x = _wl_top__part_1_bounds[0].x + (_wl_top__part_1_bounds[1].x - _wl_top__part_1_bounds[0].x) / 2
+                let _wl_top__part_1_y = _wl_top__part_1_bounds[0].y + (_wl_top__part_1_bounds[1].y - _wl_top__part_1_bounds[0].y) / 2
+                _wl_top__part_1 = translate([-_wl_top__part_1_x, -_wl_top__part_1_y, 0], _wl_top__part_1);
+                _wl_top__part_1 = rotate([0,0,0], _wl_top__part_1);
+                _wl_top__part_1 = translate([_wl_top__part_1_x, _wl_top__part_1_y, 0], _wl_top__part_1);
 
-                _top__part_1 = translate([0,0,5.2], _top__part_1);
-                result = result.union(_top__part_1);
+                _wl_top__part_1 = translate([0,0,5.2], _wl_top__part_1);
+                result = result.union(_wl_top__part_1);
                 
             
 
-                // creating part 2 of case _top
-                let _top__part_2 = top_cover_area_extrude_9_8_outline_fn();
+                // creating part 2 of case _wl_top
+                let _wl_top__part_2 = top_cover_area_extrude_9_8_outline_fn();
 
                 // make sure that rotations are relative
-                let _top__part_2_bounds = _top__part_2.getBounds();
-                let _top__part_2_x = _top__part_2_bounds[0].x + (_top__part_2_bounds[1].x - _top__part_2_bounds[0].x) / 2
-                let _top__part_2_y = _top__part_2_bounds[0].y + (_top__part_2_bounds[1].y - _top__part_2_bounds[0].y) / 2
-                _top__part_2 = translate([-_top__part_2_x, -_top__part_2_y, 0], _top__part_2);
-                _top__part_2 = rotate([0,0,0], _top__part_2);
-                _top__part_2 = translate([_top__part_2_x, _top__part_2_y, 0], _top__part_2);
+                let _wl_top__part_2_bounds = _wl_top__part_2.getBounds();
+                let _wl_top__part_2_x = _wl_top__part_2_bounds[0].x + (_wl_top__part_2_bounds[1].x - _wl_top__part_2_bounds[0].x) / 2
+                let _wl_top__part_2_y = _wl_top__part_2_bounds[0].y + (_wl_top__part_2_bounds[1].y - _wl_top__part_2_bounds[0].y) / 2
+                _wl_top__part_2 = translate([-_wl_top__part_2_x, -_wl_top__part_2_y, 0], _wl_top__part_2);
+                _wl_top__part_2 = rotate([0,0,0], _wl_top__part_2);
+                _wl_top__part_2 = translate([_wl_top__part_2_x, _wl_top__part_2_y, 0], _wl_top__part_2);
 
-                _top__part_2 = translate([0,0,5.2], _top__part_2);
-                result = result.union(_top__part_2);
+                _wl_top__part_2 = translate([0,0,5.2], _wl_top__part_2);
+                result = result.union(_wl_top__part_2);
                 
             
 
-                // creating part 3 of case _top
-                let _top__part_3 = inner_top_cover_area_extrude_8_outline_fn();
+                // creating part 3 of case _wl_top
+                let _wl_top__part_3 = inner_top_cover_area_extrude_8_outline_fn();
 
                 // make sure that rotations are relative
-                let _top__part_3_bounds = _top__part_3.getBounds();
-                let _top__part_3_x = _top__part_3_bounds[0].x + (_top__part_3_bounds[1].x - _top__part_3_bounds[0].x) / 2
-                let _top__part_3_y = _top__part_3_bounds[0].y + (_top__part_3_bounds[1].y - _top__part_3_bounds[0].y) / 2
-                _top__part_3 = translate([-_top__part_3_x, -_top__part_3_y, 0], _top__part_3);
-                _top__part_3 = rotate([0,0,0], _top__part_3);
-                _top__part_3 = translate([_top__part_3_x, _top__part_3_y, 0], _top__part_3);
+                let _wl_top__part_3_bounds = _wl_top__part_3.getBounds();
+                let _wl_top__part_3_x = _wl_top__part_3_bounds[0].x + (_wl_top__part_3_bounds[1].x - _wl_top__part_3_bounds[0].x) / 2
+                let _wl_top__part_3_y = _wl_top__part_3_bounds[0].y + (_wl_top__part_3_bounds[1].y - _wl_top__part_3_bounds[0].y) / 2
+                _wl_top__part_3 = translate([-_wl_top__part_3_x, -_wl_top__part_3_y, 0], _wl_top__part_3);
+                _wl_top__part_3 = rotate([0,0,0], _wl_top__part_3);
+                _wl_top__part_3 = translate([_wl_top__part_3_x, _wl_top__part_3_y, 0], _wl_top__part_3);
 
-                _top__part_3 = translate([0,0,5.2], _top__part_3);
-                result = result.subtract(_top__part_3);
+                _wl_top__part_3 = translate([0,0,5.2], _wl_top__part_3);
+                result = result.subtract(_wl_top__part_3);
                 
             
 
-                // creating part 4 of case _top
-                let _top__part_4 = trrs_extrude_5_2_outline_fn();
+                // creating part 4 of case _wl_top
+                let _wl_top__part_4 = power_extrude_1_6_outline_fn();
 
                 // make sure that rotations are relative
-                let _top__part_4_bounds = _top__part_4.getBounds();
-                let _top__part_4_x = _top__part_4_bounds[0].x + (_top__part_4_bounds[1].x - _top__part_4_bounds[0].x) / 2
-                let _top__part_4_y = _top__part_4_bounds[0].y + (_top__part_4_bounds[1].y - _top__part_4_bounds[0].y) / 2
-                _top__part_4 = translate([-_top__part_4_x, -_top__part_4_y, 0], _top__part_4);
-                _top__part_4 = rotate([0,0,0], _top__part_4);
-                _top__part_4 = translate([_top__part_4_x, _top__part_4_y, 0], _top__part_4);
+                let _wl_top__part_4_bounds = _wl_top__part_4.getBounds();
+                let _wl_top__part_4_x = _wl_top__part_4_bounds[0].x + (_wl_top__part_4_bounds[1].x - _wl_top__part_4_bounds[0].x) / 2
+                let _wl_top__part_4_y = _wl_top__part_4_bounds[0].y + (_wl_top__part_4_bounds[1].y - _wl_top__part_4_bounds[0].y) / 2
+                _wl_top__part_4 = translate([-_wl_top__part_4_x, -_wl_top__part_4_y, 0], _wl_top__part_4);
+                _wl_top__part_4 = rotate([0,0,0], _wl_top__part_4);
+                _wl_top__part_4 = translate([_wl_top__part_4_x, _wl_top__part_4_y, 0], _wl_top__part_4);
 
-                _top__part_4 = translate([0,0,5.2], _top__part_4);
-                result = result.subtract(_top__part_4);
+                _wl_top__part_4 = translate([0,0,5.2], _wl_top__part_4);
+                result = result.subtract(_wl_top__part_4);
                 
             
 
-                // creating part 5 of case _top
-                let _top__part_5 = power_extrude_1_6_outline_fn();
+                // creating part 5 of case _wl_top
+                let _wl_top__part_5 = usb_extrude_5_outline_fn();
 
                 // make sure that rotations are relative
-                let _top__part_5_bounds = _top__part_5.getBounds();
-                let _top__part_5_x = _top__part_5_bounds[0].x + (_top__part_5_bounds[1].x - _top__part_5_bounds[0].x) / 2
-                let _top__part_5_y = _top__part_5_bounds[0].y + (_top__part_5_bounds[1].y - _top__part_5_bounds[0].y) / 2
-                _top__part_5 = translate([-_top__part_5_x, -_top__part_5_y, 0], _top__part_5);
-                _top__part_5 = rotate([0,0,0], _top__part_5);
-                _top__part_5 = translate([_top__part_5_x, _top__part_5_y, 0], _top__part_5);
+                let _wl_top__part_5_bounds = _wl_top__part_5.getBounds();
+                let _wl_top__part_5_x = _wl_top__part_5_bounds[0].x + (_wl_top__part_5_bounds[1].x - _wl_top__part_5_bounds[0].x) / 2
+                let _wl_top__part_5_y = _wl_top__part_5_bounds[0].y + (_wl_top__part_5_bounds[1].y - _wl_top__part_5_bounds[0].y) / 2
+                _wl_top__part_5 = translate([-_wl_top__part_5_x, -_wl_top__part_5_y, 0], _wl_top__part_5);
+                _wl_top__part_5 = rotate([0,0,0], _wl_top__part_5);
+                _wl_top__part_5 = translate([_wl_top__part_5_x, _wl_top__part_5_y, 0], _wl_top__part_5);
 
-                _top__part_5 = translate([0,0,5.2], _top__part_5);
-                result = result.subtract(_top__part_5);
+                _wl_top__part_5 = translate([0,0,7.2], _wl_top__part_5);
+                result = result.subtract(_wl_top__part_5);
                 
             
 
-                // creating part 6 of case _top
-                let _top__part_6 = usb_extrude_5_outline_fn();
+                // creating part 6 of case _wl_top
+                let _wl_top__part_6 = reset_extrude_1_8_outline_fn();
 
                 // make sure that rotations are relative
-                let _top__part_6_bounds = _top__part_6.getBounds();
-                let _top__part_6_x = _top__part_6_bounds[0].x + (_top__part_6_bounds[1].x - _top__part_6_bounds[0].x) / 2
-                let _top__part_6_y = _top__part_6_bounds[0].y + (_top__part_6_bounds[1].y - _top__part_6_bounds[0].y) / 2
-                _top__part_6 = translate([-_top__part_6_x, -_top__part_6_y, 0], _top__part_6);
-                _top__part_6 = rotate([0,0,0], _top__part_6);
-                _top__part_6 = translate([_top__part_6_x, _top__part_6_y, 0], _top__part_6);
+                let _wl_top__part_6_bounds = _wl_top__part_6.getBounds();
+                let _wl_top__part_6_x = _wl_top__part_6_bounds[0].x + (_wl_top__part_6_bounds[1].x - _wl_top__part_6_bounds[0].x) / 2
+                let _wl_top__part_6_y = _wl_top__part_6_bounds[0].y + (_wl_top__part_6_bounds[1].y - _wl_top__part_6_bounds[0].y) / 2
+                _wl_top__part_6 = translate([-_wl_top__part_6_x, -_wl_top__part_6_y, 0], _wl_top__part_6);
+                _wl_top__part_6 = rotate([0,0,0], _wl_top__part_6);
+                _wl_top__part_6 = translate([_wl_top__part_6_x, _wl_top__part_6_y, 0], _wl_top__part_6);
 
-                _top__part_6 = translate([0,0,7.2], _top__part_6);
-                result = result.subtract(_top__part_6);
-                
-            
-
-                // creating part 7 of case _top
-                let _top__part_7 = reset_extrude_1_8_outline_fn();
-
-                // make sure that rotations are relative
-                let _top__part_7_bounds = _top__part_7.getBounds();
-                let _top__part_7_x = _top__part_7_bounds[0].x + (_top__part_7_bounds[1].x - _top__part_7_bounds[0].x) / 2
-                let _top__part_7_y = _top__part_7_bounds[0].y + (_top__part_7_bounds[1].y - _top__part_7_bounds[0].y) / 2
-                _top__part_7 = translate([-_top__part_7_x, -_top__part_7_y, 0], _top__part_7);
-                _top__part_7 = rotate([0,0,0], _top__part_7);
-                _top__part_7 = translate([_top__part_7_x, _top__part_7_y, 0], _top__part_7);
-
-                _top__part_7 = translate([0,0,13.2], _top__part_7);
-                result = result.subtract(_top__part_7);
+                _wl_top__part_6 = translate([0,0,13.2], _wl_top__part_6);
+                result = result.subtract(_wl_top__part_6);
                 
             
                     return result;
@@ -247,22 +225,22 @@ function reset_extrude_1_8_outline_fn(){
             
             
 
-                function top_case_fn() {
+                function wl_top_case_fn() {
                     
 
-                // creating part 0 of case top
-                let top__part_0 = _top_case_fn();
+                // creating part 0 of case wl_top
+                let wl_top__part_0 = _wl_top_case_fn();
 
                 // make sure that rotations are relative
-                let top__part_0_bounds = top__part_0.getBounds();
-                let top__part_0_x = top__part_0_bounds[0].x + (top__part_0_bounds[1].x - top__part_0_bounds[0].x) / 2
-                let top__part_0_y = top__part_0_bounds[0].y + (top__part_0_bounds[1].y - top__part_0_bounds[0].y) / 2
-                top__part_0 = translate([-top__part_0_x, -top__part_0_y, 0], top__part_0);
-                top__part_0 = rotate([0,0,0], top__part_0);
-                top__part_0 = translate([top__part_0_x, top__part_0_y, 0], top__part_0);
+                let wl_top__part_0_bounds = wl_top__part_0.getBounds();
+                let wl_top__part_0_x = wl_top__part_0_bounds[0].x + (wl_top__part_0_bounds[1].x - wl_top__part_0_bounds[0].x) / 2
+                let wl_top__part_0_y = wl_top__part_0_bounds[0].y + (wl_top__part_0_bounds[1].y - wl_top__part_0_bounds[0].y) / 2
+                wl_top__part_0 = translate([-wl_top__part_0_x, -wl_top__part_0_y, 0], wl_top__part_0);
+                wl_top__part_0 = rotate([0,0,0], wl_top__part_0);
+                wl_top__part_0 = translate([wl_top__part_0_x, wl_top__part_0_y, 0], wl_top__part_0);
 
-                top__part_0 = translate([0,0,0], top__part_0);
-                let result = top__part_0;
+                wl_top__part_0 = translate([0,0,0], wl_top__part_0);
+                let result = wl_top__part_0;
                 
             
                     return result;
@@ -271,7 +249,7 @@ function reset_extrude_1_8_outline_fn(){
             
         
             function main() {
-                return top_case_fn();
+                return wl_top_case_fn();
             }
 
         

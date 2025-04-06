@@ -4,6 +4,7 @@
     "build-builder": "docker build --platform linux/amd64 -t mdk/ergo-builder:latest builder",
     "case-bottom": "npx @jscad/cli@1 output/cases/bottom.jscad -of stla -o cases/bottom.stl",
     "case-top": "npx @jscad/cli@1 output/cases/top.jscad -of stla -o cases/top.stl",
+    "case-top-wl": "npx @jscad/cli@1 output/cases/wl_top.jscad -of stla -o cases/wl_top.stl",
     "export-tracks": "./kicad/export_tracks.py output/pcbs/board.kicad_pcb > kicad/board.json"
   },
   "dependencies": {

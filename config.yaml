@@ -347,6 +347,12 @@ outlines:
         ref: matrix_inner_top
         shift: [23, 10]
       size: [12, 6] # todo fix y size
+  reset:
+    - what: circle
+      radius: 0.8
+      where:
+        ref: matrix_inner_bottom
+        shift: [31, -20]
 
 pcbs:
   top_plate:
@@ -541,6 +547,40 @@ cases:
       extrude: 5 # height of usb port in the controller
       operation: subtract
       shift: [0, 0, 5.2 + 2]
+    - name: reset
+      extrude: 1.8
+      operation: subtract
+      shift: [0, 0, 8 + 5.2]
+  _wl_top:
+    - name: top_case
+      extrude: 1.8
+      shift: [0, 0, 5.2]
+    - name: xlcontroller_area
+      extrude: 9.8
+      shift: [0, 0, 5.2]
+    - name: top_cover_area
+      extrude: 9.8
+      operation: add
+      shift: [0, 0, 5.2]
+    - name: inner_top_cover_area
+      extrude: 8
+      operation: subtract
+      shift: [0, 0, 5.2]
+    - name: power
+      extrude: 1.6 # height of power slide
+      operation: subtract
+      shift: [0, 0, 5.2]
+    - name: usb
+      extrude: 5 # height of usb port in the controller
+      operation: subtract
+      shift: [0, 0, 5.2 + 2]
+    - name: reset
+      extrude: 1.8
+      operation: subtract
+      shift: [0, 0, 8 + 5.2]
   top:
     - what: case
       name: _top
+  wl_top:
+    - what: case
+      name: _wl_top

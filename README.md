@@ -7,7 +7,8 @@ reversible pcb and 3d printed cases
 ![bottom pcb](./ergogen/output/images/board-bottom.png)
 
 # ZMK
-- download firmware from github action
+- main branch: left side as master
+- dongle branch: include config for dongle
 
 # TODO
 - qmk firmware

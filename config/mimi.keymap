@@ -90,36 +90,36 @@
             key-positions = <27 28>; // df -> cap words
             bindings = <&caps_word>;
         };
-        combo_parent_rt {
-            timeout-ms = <20>;
-            key-positions = <16 17>; // rt -> open parenthesis
-            bindings = <&kp LPAR>;
-        };
-        combo_parent_yu {
-            timeout-ms = <20>;
-            key-positions = <18 19>; // yu -> close parenthesis
-            bindings = <&kp RPAR>;
-        };
-        combo_square_fg {
-            timeout-ms = <20>;
-            key-positions = <28 29>; // fg -> open square bracket
-            bindings = <&kp LBKT>;
-        };
-        combo_square_hj {
-            timeout-ms = <20>;
-            key-positions = <30 31>; // hj -> close square bracket
-            bindings = <&kp RBKT>;
-        };
-        combo_curly_vb {
-            timeout-ms = <20>;
-            key-positions = <40 41>; // vb -> open curly bracket
-            bindings = <&kp LBRC>;
-        };
-        combo_curly_nm {
-            timeout-ms = <20>;
-            key-positions = <42 43>; // nm -> close curly bracket
-            bindings = <&kp RBRC>;
-        };
+        /* combo_parent_rt { */
+        /*     timeout-ms = <20>; */
+        /*     key-positions = <16 17>; // rt -> open parenthesis */
+        /*     bindings = <&kp LPAR>; */
+        /* }; */
+        /* combo_parent_yu { */
+        /*     timeout-ms = <20>; */
+        /*     key-positions = <18 19>; // yu -> close parenthesis */
+        /*     bindings = <&kp RPAR>; */
+        /* }; */
+        /* combo_square_fg { */
+        /*     timeout-ms = <20>; */
+        /*     key-positions = <28 29>; // fg -> open square bracket */
+        /*     bindings = <&kp LBKT>; */
+        /* }; */
+        /* combo_square_hj { */
+        /*     timeout-ms = <20>; */
+        /*     key-positions = <30 31>; // hj -> close square bracket */
+        /*     bindings = <&kp RBKT>; */
+        /* }; */
+        /* combo_curly_vb { */
+        /*     timeout-ms = <20>; */
+        /*     key-positions = <40 41>; // vb -> open curly bracket */
+        /*     bindings = <&kp LBRC>; */
+        /* }; */
+        /* combo_curly_nm { */
+        /*     timeout-ms = <20>; */
+        /*     key-positions = <42 43>; // nm -> close curly bracket */
+        /*     bindings = <&kp RBRC>; */
+        /* }; */
     };
 };
 
@@ -132,8 +132,8 @@
 &kp GRAVE        &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                              &kp N6          &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
 &kp TAB          &kp Q  &kp W    &kp E    &kp R     &kp T                               &kp Y           &kp U     &kp I     &kp O    &kp P    &kp BSLH
 &hml LALT ESC    &kp A  &kp S    &kp D    &kp F     &kp G                               &kp H           &kp J     &kp K     &kp L    &kp SEMI &hmr RALT SQT
-&kp LSHFT        &kp Z  &kp X    &kp C    &kp V     &kp B                               &kp N           &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                                &kp LGUI &hml LCTRL BSPC  &mo 1                   &mo 1 &hmr RCTRL SPACE &hmr RGUI EQUAL
+&hml LSHFT LPAR  &kp Z  &kp X    &kp C    &kp V     &kp B                               &kp N           &kp M     &kp COMMA &kp DOT  &kp FSLH &hmr RSHFT RPAR
+                                &kp LGUI &hml LCTRL BSPC  &lt 1 LBKT         &lt 1 RBKT &hmr RCTRL SPACE &hmr RGUI EQUAL
             >;
         };
 

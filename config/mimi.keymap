@@ -61,62 +61,62 @@
     combos {
         compatible = "zmk,combos";
         combo_enter {
-            timeout-ms = <20>;
+            timeout-ms = <15>;
             key-positions = <31 32>; // jk -> enter
             bindings = <&kp RET>;
         };
         combo_up {
-            timeout-ms = <20>;
+            timeout-ms = <15>;
             key-positions = <19 20>; // ui -> up
             bindings = <&kp UP>;
         };
         combo_down {
-            timeout-ms = <20>;
+            timeout-ms = <15>;
             key-positions = <43 44>; // m, -> down
             bindings = <&kp DOWN>;
         };
         combo_pg_up {
-            timeout-ms = <20>;
+            timeout-ms = <15>;
             key-positions = <15 16>; // er -> left
             bindings = <&kp LEFT>;
         };
         combo_pg_down {
-            timeout-ms = <20>;
+            timeout-ms = <15>;
             key-positions = <39 40>; // cv -> right
             bindings = <&kp RIGHT>;
         };
         combo_capsword_df {
-            timeout-ms = <20>;
+            timeout-ms = <15>;
             key-positions = <27 28>; // df -> cap words
             bindings = <&caps_word>;
         };
         /* combo_parent_rt { */
-        /*     timeout-ms = <20>; */
+        /*     timeout-ms = <15>; */
         /*     key-positions = <16 17>; // rt -> open parenthesis */
         /*     bindings = <&kp LPAR>; */
         /* }; */
         /* combo_parent_yu { */
-        /*     timeout-ms = <20>; */
+        /*     timeout-ms = <15>; */
         /*     key-positions = <18 19>; // yu -> close parenthesis */
         /*     bindings = <&kp RPAR>; */
         /* }; */
         /* combo_square_fg { */
-        /*     timeout-ms = <20>; */
+        /*     timeout-ms = <15>; */
         /*     key-positions = <28 29>; // fg -> open square bracket */
         /*     bindings = <&kp LBKT>; */
         /* }; */
         /* combo_square_hj { */
-        /*     timeout-ms = <20>; */
+        /*     timeout-ms = <15>; */
         /*     key-positions = <30 31>; // hj -> close square bracket */
         /*     bindings = <&kp RBKT>; */
         /* }; */
         /* combo_curly_vb { */
-        /*     timeout-ms = <20>; */
+        /*     timeout-ms = <15>; */
         /*     key-positions = <40 41>; // vb -> open curly bracket */
         /*     bindings = <&kp LBRC>; */
         /* }; */
         /* combo_curly_nm { */
-        /*     timeout-ms = <20>; */
+        /*     timeout-ms = <15>; */
         /*     key-positions = <42 43>; // nm -> close curly bracket */
         /*     bindings = <&kp RBRC>; */
         /* }; */

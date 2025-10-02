@@ -64,31 +64,37 @@
             timeout-ms = <15>;
             key-positions = <31 32>; // jk -> enter
             bindings = <&kp RET>;
+            require-prior-idle-ms = <160>;
         };
         combo_up {
             timeout-ms = <15>;
             key-positions = <19 20>; // ui -> up
             bindings = <&kp UP>;
+            require-prior-idle-ms = <160>;
         };
         combo_down {
             timeout-ms = <15>;
             key-positions = <43 44>; // m, -> down
             bindings = <&kp DOWN>;
+            require-prior-idle-ms = <160>;
         };
         combo_pg_up {
             timeout-ms = <15>;
             key-positions = <15 16>; // er -> left
             bindings = <&kp LEFT>;
+            require-prior-idle-ms = <160>;
         };
         combo_pg_down {
             timeout-ms = <15>;
             key-positions = <39 40>; // cv -> right
             bindings = <&kp RIGHT>;
+            require-prior-idle-ms = <160>;
         };
         combo_capsword_df {
             timeout-ms = <15>;
             key-positions = <27 28>; // df -> cap words
             bindings = <&caps_word>;
+            require-prior-idle-ms = <160>;
         };
         /* combo_parent_rt { */
         /*     timeout-ms = <15>; */
